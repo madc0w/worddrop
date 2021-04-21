@@ -1,0 +1,382 @@
+body {
+	background-color: #ddd;
+	font-family: "Lato", sans-serif;
+	max-width: 800px;
+}
+
+canvas {
+	border-radius: 8px;
+	background-color: #002;
+	box-shadow: 8px 8px 8px #666;
+	margin-top: 8px;
+}
+
+.col-spacer {
+	min-width: 10px;
+}
+
+#complete-words-header {
+	font-weight: bold;
+}
+
+#main-container {
+	padding-top: 20px;
+	margin-left: 24px;
+}
+
+#complete-words-container {
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 8px;
+	background-color: #bbb;
+	margin-top: 8px;
+	margin-left: 18px;
+	min-width: 248px;
+	height: 392px;
+	padding-top: 8px;
+	padding-left: 8px;
+	box-shadow: 8px 8px 8px #666;
+}
+
+#complete-words-list-container {
+	overflow: auto;
+	max-height: 360px;
+}
+
+#complete-words-list {
+	font-size: 22px;
+}
+
+#complete-words-list a {
+	margin-left: 8px;
+	text-decoration: none;
+}
+
+#game-header {
+	background-color: #bbb;
+	border-radius: 8px;
+	text-align: left;
+	padding-top: 8px;
+	padding-left: 8px;
+	width: 395px;
+	display: inline-block;
+	box-shadow: 8px 8px 8px #666;
+}
+
+#game-header .col {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#game-container {
+	margin-top: 8px;
+}
+
+#score-container {
+	font-size: +2em;
+	width: 120px;
+}
+
+#reset-hiscores-button {
+	width: 40px;
+	margin-bottom: 8px;
+	margin-top: 4px;
+}
+
+#right-col {
+	float: right;
+}
+
+#next-letters-container {
+	font-weight: bold;
+	font-size: 22px;
+	margin-left: 2px;
+	margin-top: 4px;
+}
+
+#next-letters-container div {
+	display: inline-block;
+	min-width: 26px;
+}
+
+#switch-container {
+	margin-right: 18px;
+	margin-top: 8px;
+	font-size: +3em;
+	font-weight: bold;
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 4px;
+	border-color: black;
+	background-color: #19aa5d;
+	min-width: 60px;
+	max-width: 60px;
+	min-height: 60px;
+	text-align: center;
+	box-shadow: 8px 8px 8px #666;
+	text-align: center
+}
+
+#header-container {
+	background-color: white;
+	border-width: 1px;
+	border-color: #222;
+	border-style: solid;
+	border-radius: 8px;
+	padding: 8px;
+	padding-bottom: 4px;
+	box-shadow: 8px 8px 8px #666;
+}
+
+.highlight {
+	font-weight: bold;
+	color: #19aa5d;
+	text-decoration: underline;
+}
+
+#title {
+	font-size: +2em;
+	font-weight: bold;
+	color: #19aa5d;
+}
+
+#share {
+	float: right;
+}
+
+#game-controls {
+	display: inline-block;
+	border-radius: 8px;
+	vertical-align: top;
+	background-color: #bbb;
+	width: 250px;
+	height: 120px;
+	padding-top: 8px;
+	padding-left: 8px;
+	margin-left: 12px;
+	box-shadow: 8px 8px 8px #666;
+}
+
+#top-container {
+	width: 800px;
+}
+
+#pause-play-button {
+	width: 200px;
+	margin-left: 12px;
+	margin-top: 22px;
+	margin-bottom: 4px;
+}
+
+#mode-controls-container {
+	margin-top: 8px;
+}
+
+#mode-controls-container .button {
+	width: 200px;
+	margin-left: 12px;
+	display: inline;
+}
+
+.button {
+	cursor: pointer;
+	text-align: center;
+	padding: 4px;
+	background-color: #19aa5d;
+	border-radius: 8px;
+	font-weight: bold;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #222;
+	box-shadow: 8px 8px 8px #666;
+}
+
+.button.selected {
+	color: white;
+}
+
+.button:HOVER {
+	color: black;
+	background-color: white;
+	border-width: 2px;
+	border-color: #19aa5d;
+}
+
+#mode-label {
+	font-size: 28px;
+	font-weight: bold;
+	color: #19aa5d;
+	outline-style: dotted;
+	outline-width: 4px;
+/* 	text-decoration: overline underline; */
+	text-align: center;
+}
+
+#time-container {
+	width: 125px;
+	font-size: 70px;
+}
+
+#speed-container {
+	padding-top: 6px;
+	padding-left: 28px;
+}
+
+#speed-container .label {
+	font-weight: bold;
+}
+
+#footer-info {
+	padding-top: 12px;
+}
+
+#footer-info .col {
+	vertical-align: top;
+	display: inline-block;
+	width: 48%;
+}
+
+#scoring-rules-button {
+	width: 150px;
+	margin-left: 90px;
+	margin-top: 12px;
+}
+
+#popup-info {
+	display: none;
+	position: absolute;
+	z-index: 2;
+	width: 200px;
+	background-color: #eee;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 8px 8px 8px #666;
+}
+
+.scoring-rules-popup {
+	top: 40px !important;
+	width: 450px !important;
+}
+
+.reset-hiscores-popup div {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.scoring-rules-popup table {
+	display: inline;
+	margin-right: 22px;
+}
+
+.scoring-rules-popup td {
+	border: 1px solid #19aa5d;
+}
+
+.scoring-rules-popup th {
+	background: #19aa5d;
+	padding: 4px;
+}
+
+#scoring-tables {
+	margin-left: 32px;
+	margin-top: 8px;
+}
+
+/****************/
+/* range config */
+/****************/
+
+input[type=range] {
+	-webkit-appearance: none;
+	max-width: 140px;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	height: 6px;
+	cursor: pointer;
+	animate: 0.2s;
+	background: #224;
+	border-radius: 4px;
+	border: 1px solid #000000;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	border: 1px solid #000000;
+	height: 24px;
+	width: 8px;
+	border-radius: 4px;
+	background: #19aa5d;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -11px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+	background: black;
+}
+
+input[type=range]::-moz-range-track {
+	height: 6px;
+	cursor: pointer;
+	animate: 0.2s;
+	background: black;
+	border-radius: 4px;
+	border: 1px solid #000000;
+}
+
+input[type=range]::-moz-range-thumb {
+	box-shadow: 0px 0px 0px #000000;
+	border: 1px solid #000000;
+	height: 24px;
+	width: 8px;
+	border-radius: 4px;
+	background: #19aa5d;
+	cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+	height: 6px;
+	cursor: pointer;
+	animate: 0.2s;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+	background: black;
+	border: 1px solid #000000;
+	border-radius: 8px;
+}
+
+input[type=range]::-ms-fill-upper {
+	background: black;
+	border: 1px solid #000000;
+	border-radius: 8px;
+}
+
+input[type=range]::-ms-thumb {
+	margin-top: 1px;
+	box-shadow: 0px 0px 0px #000000;
+	border: 1px solid #000000;
+	height: 24px;
+	width: 8px;
+	border-radius: 4px;
+	background: #19aa5d;
+	cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+	background: black;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+	background: black;
+}
