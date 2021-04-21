@@ -1,124 +1,129 @@
 <html>
-<head>
-<title>WordDrop</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/> 
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="word_tree.js"></script>
-<script type="text/javascript" src="game.js"></script>
 
-<!-- for Facebook:  -->
-<meta property="og:title" content="WordDrop"/>
-<!-- <meta property="og:image" content="http://heliosophiclabs.com/worddrop"/> -->
-<meta property="og:description" content=""/>
-<meta property="og:site_name" content="WordDrop"/>
-<meta property="og:url" content="http://heliosophiclabs.com/worddrop/"/>
-<meta property="og:type" content="website"/>
+	<head>
+		<title>WordDrop</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="word_tree.js"></script>
+		<script type="text/javascript" src="game.js"></script>
 
-<!--  for Twitter: -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@worddrop" />
-<meta name="twitter:title" content="WordDrop"/>
-<meta name="twitter:description" content=""/>
-<!-- <meta name="twitter:image" content="http://heliosophiclabs.com/worddrop/"/> -->
+		<!-- for Facebook:  -->
+		<meta property="og:title" content="WordDrop" />
+		<!-- <meta property="og:image" content="https://madc0w.github.io/worddrop"/> -->
+		<meta property="og:description" content="" />
+		<meta property="og:site_name" content="WordDrop" />
+		<meta property="og:url" content="https://madc0w.github.io/worddrop/" />
+		<meta property="og:type" content="website" />
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113328670-1"></script>
-<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){
-		dataLayer.push(arguments);
-	}
-	gtag("js", new Date());
-	gtag("config", "UA-113328670-1");
-</script>
+		<!--  for Twitter: -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@worddrop" />
+		<meta name="twitter:title" content="WordDrop" />
+		<meta name="twitter:description" content="" />
+		<!-- <meta name="twitter:image" content="https://madc0w.github.io/worddrop/"/> -->
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-113328670-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "UA-113328670-1");
+		</script>
 
 
-</head>
-<body onLoad="onLoad();" onKeyDown="onKeyDown(event);" >
-<div id="header-container">
-	<div id="share">
-		<!-- AddToAny BEGIN -->
-		<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-		<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-		<a class="a2a_button_facebook"></a>
-		<a class="a2a_button_twitter"></a>
-		<a class="a2a_button_google_plus"></a>
-		</div>
-		<script async src="https://static.addtoany.com/menu/page.js"></script>
-		<!-- AddToAny END -->
-	</div>
-	<div id="title">WordDrop</div>
-</div>
-<div id="main-container">
-	<div id="top-container">
-		<div id="game-header">
-			<div class="col">
-				<div id="score-container">
-					<span id="score">0</span>
+	</head>
+
+	<body onLoad="onLoad();" onKeyDown="onKeyDown(event);">
+		<div id="header-container">
+			<div id="share">
+				<!-- AddToAny BEGIN -->
+				<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+					<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+					<a class="a2a_button_facebook"></a>
+					<a class="a2a_button_twitter"></a>
+					<a class="a2a_button_google_plus"></a>
 				</div>
-				<div id="high-score-container">
-					High score
-					<div id="high-score"></div>
-					<div id="reset-hiscores-button" class="button" onClick="showInfo(this, 'resetHiscore', 'reset-hiscores-popup');">Reset</div>
+				<script async src="https://static.addtoany.com/menu/page.js"></script>
+				<!-- AddToAny END -->
+			</div>
+			<div id="title">WordDrop</div>
+		</div>
+		<div id="main-container">
+			<div id="top-container">
+				<div id="game-header">
+					<div class="col">
+						<div id="score-container">
+							<span id="score">0</span>
+						</div>
+						<div id="high-score-container">
+							High score
+							<div id="high-score"></div>
+							<div id="reset-hiscores-button" class="button" onClick="showInfo(this, 'resetHiscore', 'reset-hiscores-popup');">Reset</div>
+						</div>
+					</div>
+					<div class="col">
+						<div id="mode-label"></div>
+						<div id="time-container"></div>
+					</div>
+					<div id="right-col" class="col">
+						<div id="switch-container"></div>
+						<div id="next-letters-container"></div>
+					</div>
+				</div>
+				<div id="game-controls">
+					<div id="mode-controls-container">
+						<div id="sprint-mode-button" class="button" onClick="setMode('sprint');" onMouseOver="showInfo(this, 'sprint');" onMouseOut="hideInfo();">Sprint</div>
+						<div id="ultra-mode-button" class="button" onClick="setMode('ultra');" onMouseOver="showInfo(this, 'ultra');" onMouseOut="hideInfo();">Ultra</div>
+						<div id="marathon-mode-button" class="button" onClick="setMode('marathon');" onMouseOver="showInfo(this, 'marathon');" onMouseOut="hideInfo();">Marathon
+						</div>
+					</div>
+					<div id="pause-play-button" class="button" onClick="togglePause();">Pause</div>
+					<div id="speed-container">
+						<span class="label">Speed</span>
+						<input type="range" onChange="speedChnaged(this);" />
+					</div>
 				</div>
 			</div>
-			<div class="col">
-				<div id="mode-label"></div>
-				<div id="time-container"></div>
+			<div id="game-container">
+				<canvas id="game-canvas" width="400" height="400"></canvas>
+				<div id="complete-words-container">
+					<div id="complete-words-header">Completed words</div>
+					<div id="complete-words-list-container">
+						<table id="complete-words-list"></table>
+					</div>
+				</div>
 			</div>
-			<div id="right-col" class="col">
-				<div id="switch-container"></div>
-				<div id="next-letters-container"></div>
-			</div>
-		</div>
-		<div id="game-controls">
-			<div id="mode-controls-container">
-				<div id="sprint-mode-button" class="button" onClick="setMode('sprint');" onMouseOver="showInfo(this, 'sprint');" onMouseOut="hideInfo();">Sprint</div>
-				<div id="ultra-mode-button" class="button" onClick="setMode('ultra');" onMouseOver="showInfo(this, 'ultra');" onMouseOut="hideInfo();">Ultra</div>
-				<div id="marathon-mode-button" class="button" onClick="setMode('marathon');" onMouseOver="showInfo(this, 'marathon');" onMouseOut="hideInfo();">Marathon</div>
-			</div>
-			<div id="pause-play-button" class="button" onClick="togglePause();">Pause</div>
-			<div id="speed-container">
-				<span class="label">Speed</span>
-				<input type="range" onChange="speedChnaged(this);"/>
-			</div>
-		</div>
-	</div>
-	<div id="game-container">
-		<canvas id="game-canvas" width="400" height="400"></canvas>
-		<div id="complete-words-container">
-			<div id="complete-words-header">Completed words</div>
-			<div id="complete-words-list-container">
-				<table id="complete-words-list"></table>
-			</div>
-		</div>
-	</div>
-	<div id="footer">
-		<div id="footer-info">
-			<div class="col">
-				Make the longest words you can, either horizontally or vertically.  Words must be at least 3 letters long.<br/>
-				<div id="scoring-rules-button" class="button" onClick="showInfo(this, 'scoringRules', 'scoring-rules-popup');" >Scoring rules</div>
-			</div>
-			<div class="col">
-				Use the <span class="highlight">LEFT</span> and <span class="highlight">RIGHT</span> arrow keys to move the letter, and
-				the <span class="highlight">DOWN</span> arrow to make it fall faster.<br/>
-				Hit the <span class="highlight">SPACE BAR</span> to drop the letter.<br/>
-				Hit <span class="highlight">UP</span> or <span class="highlight">ENTER</span> to switch to the letter in your cache.  You may do this only once per move!<br/>
+			<div id="footer">
+				<div id="footer-info">
+					<div class="col">
+						Make the longest words you can, either horizontally or vertically. Words must be at least 3 letters long.<br />
+						<div id="scoring-rules-button" class="button" onClick="showInfo(this, 'scoringRules', 'scoring-rules-popup');">Scoring rules</div>
+					</div>
+					<div class="col">
+						Use the <span class="highlight">LEFT</span> and <span class="highlight">RIGHT</span> arrow keys to move the letter, and
+						the <span class="highlight">DOWN</span> arrow to make it fall faster.<br />
+						Hit the <span class="highlight">SPACE BAR</span> to drop the letter.<br />
+						Hit <span class="highlight">UP</span> or <span class="highlight">ENTER</span> to switch to the letter in your cache. You may do this only once per
+						move!<br />
+					</div>
+				</div>
+				<p>
+					You can view the <a href="words_us.txt" target="worddrop_words">complete word list here.</a> The list is based on
+					<a href="http://www-personal.umich.edu/~jlawler/wordlist">this one</a>, but proper names, abbreviations,
+					dialectal words, non-English words (Latin, French, Italian, German, etc.), and words not referenced in
+					<a href="https://www.merriam-webster.com/">Merriam-Webster's dictionary</a> have been removed.
+				</p>
+				<p>
+					Brought to you by <a href="mailto:mad7@runbox.com">Marc A. Donis</a>. Thanks for your feedback!
+				</p>
 			</div>
 		</div>
-		<p>
-			You can view the <a href="words_us.txt" target="worddrop_words">complete word list here.</a>  The list is based on 
-			<a href="http://www-personal.umich.edu/~jlawler/wordlist">this one</a>, but proper names, abbreviations, 
-			dialectal words, non-English words (Latin, French, Italian, German, etc.), and words not referenced in 
-			<a href="https://www.merriam-webster.com/">Merriam-Webster's dictionary</a> have been removed.  
-		</p>
-		<p>
-			Brought to you by <a href="mailto:mad7@runbox.com">Marc A. Donis</a>.  Thanks for your feedback!
-		</p>
-	</div>
-</div>
 
-<div id="popup-info" onClick="hideInfo();"></div>
-</body>
+		<div id="popup-info" onClick="hideInfo();"></div>
+	</body>
+
 </html>
